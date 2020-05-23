@@ -19,6 +19,7 @@ bundle install
 
 ## What does it do?
 |   Prefix | Verb   |  URI Pattern |              Controller#Action| 
+|-------------------------------|--------|---------------------------------------------------------|-------------------------------|
   |       auth_login |  POST  |   /auth/login(.:format)  |             authentication#authenticate| 
      |        signup  | POST  |   /signup(.:format)      |        users#create| 
    |   party_player_characters  | GET   |   /parties/:party_id/player_characters(.:format)    |      player_characters#index| 
