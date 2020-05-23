@@ -2,12 +2,9 @@
 ## Autor: Arkadiusz Chudy
 Tematem jest serwis do tworzenia starć w systemie Dungeons&Dragons 5E (gra typu papierowe RPG).
 
-Projekt składa się ze strony internetowej, gdzie użytkownik może zalogo-
-wać się, by móc przeglądać i tworzyć przyjazne drużyny, dodawać do niej bohaterów i mieć szybki widok i porównanie drużyny z
-przeciwnikami. 
+Projekt składa się ze strony internetowej, gdzie użytkownik może zalogować się, by móc przeglądać i tworzyć przyjazne drużyny, dodawać do niej bohaterów i mieć szybki widok i porównanie drużyny zprzeciwnikami. 
 
-Jako backend projektu, do utworzenia REST API wykorzystane zostało Ruby on Rails, strona internetowa
-napisana jest przy użyciu HTML i JavaScript.
+Jako backend projektu, do utworzenia REST API wykorzystane zostało Ruby on Rails, strona internetowa napisana jest przy użyciu HTML i JavaScript.
 
 ### Zadania projektowe
 * zamodelowanie użytkownika i wprowadzenie uwierzytelniania (JWT) (1 pkt) *zrobione*
