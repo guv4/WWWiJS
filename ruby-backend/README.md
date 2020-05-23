@@ -20,31 +20,32 @@ bundle install
 ## What does it do?
 Here is a table of endpoints it serves. All requests apart from signup and login have to be authenticated with a JWT given with aforementioned.
 
-| Prefix        | Verb   | URI Pattern                                                 |
-|---------------|--------|-------------------------------------------------------------|
-| auth_login    | POST   | /auth/login(.:format)                                       |
-| signup        | POST   | /signup(.:format)                                           |
-| party_PCs     | GET    | /parties/:party_id/player_characters(.:format)              |
-|               | POST   | /parties/:party_id/player_characters(.:format)              |
-| party_PC      | GET    | /parties/:party_id/player_characters/:id(.:format)          |
-|               | PATCH  | /parties/:party_id/player_characters/:id(.:format)          |
-|               | PUT    | /parties/:party_id/player_characters/:id(.:format)          | 
-|               | DELETE | /parties/:party_id/player_characters/:id(.:format)          | 
-| parties       | GET    | /parties(.:format)                                          |
-|               | POST   | /parties(.:format)                                          |
-| party         | GET    | /parties/:id(.:format)                                      | 
-|               | PATCH  | /parties/:id(.:format)                                      |
-|               | PUT    | /parties/:id(.:format)                                      | 
-|               | DELETE | /parties/:id(.:format)                                      | 
-| opponent_NPCs | GET    | /opponents/:opponent_id/non_player_characters(.:format)     | 
-|               | POST   | /opponents/:opponent_id/non_player_characters(.:format)     | 
-| opponent_NPC  | GET    | /opponents/:opponent_id/non_player_characters/:id(.:format) | 
-|               | PATCH  | /opponents/:opponent_id/non_player_characters/:id(.:format) | 
-|               | PUT    | /opponents/:opponent_id/non_player_characters/:id(.:format) | 
-|               | DELETE | /opponents/:opponent_id/non_player_characters/:id(.:format) | 
-| opponents     | GET    | /opponents(.:format)                                        |
-|               | POST   | /opponents(.:format)                                        |
-| opponent      | GET    | /opponents/:id(.:format)                                    |
-|               | PATCH  | /opponents/:id(.:format)                                    | opponents#update              |
-|               | PUT    | /opponents/:id(.:format)                                    | opponents#update              |
-|               | DELETE | /opponents/:id(.:format)                                    | opponents#destroy             |
+| Prefix        | Verb   | URI Pattern                                        |
+|---------------|--------|----------------------------------------------------|
+| auth_login    | POST   | /auth/login                                        |
+| signup        | POST   | /signup                                            |
+| party_PCs     | GET    | /parties/:party_id/player_characters               |
+|               | POST   | /parties/:party_id/player_characters               |
+| party_PC      | GET    | /parties/:party_id/player_characters/:id           |
+|               | PATCH  | /parties/:party_id/player_characters/:id           |
+|               | PUT    | /parties/:party_id/player_characters/:id           | 
+|               | DELETE | /parties/:party_id/player_characters/:id           | 
+| parties       | GET    | /parties                                           |
+|               | POST   | /parties                                           |
+| party         | GET    | /parties/:id                                       | 
+|               | PATCH  | /parties/:id                                       |
+|               | PUT    | /parties/:id                                       | 
+|               | DELETE | /parties/:id                                       | 
+| opponent_NPCs | GET    | /opponents/:opponent_id/non_player_characters      | 
+|               | POST   | /opponents/:opponent_id/non_player_characters      | 
+| opponent_NPC  | GET    | /opponents/:opponent_id/non_player_characters/:id  | 
+|               | PATCH  | /opponents/:opponent_id/non_player_characters/:id  | 
+|               | PUT    | /opponents/:opponent_id/non_player_characters/:id  | 
+|               | DELETE | /opponents/:opponent_id/non_player_characters/:id  | 
+| opponents     | GET    | /opponents                                         |
+|               | POST   | /opponents                                         |
+| opponent      | GET    | /opponents/:id                                     |
+|               | PATCH  | /opponents/:id                                     |
+|               | PUT    | /opponents/:id                                     | 
+|               | DELETE | /opponents/:id                                     | 
+
