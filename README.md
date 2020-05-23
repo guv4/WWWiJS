@@ -1,5 +1,5 @@
 # Projekt na przedmiot WWWiJS AGH
-## Autor: Arkadiusza Chudy
+## Autor: Arkadiusz Chudy
 Tematem jest serwis do tworzenia starć w systemie Dungeons&Dragons 5E (gra typu papierowe RPG).
 
 Projekt składa się ze strony internetowej, gdzie użytkownik może zalogo-
