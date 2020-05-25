@@ -17,6 +17,8 @@ gem 'puma', '~> 4.1'
 gem 'bcrypt', '~> 3.1.7'
 # JsonWebToken easy implementation
 gem 'jwt'
+# CORS gem to enable browsers to access jsons
+gem 'rack-cors'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
+
+    <title>Encounters</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <a class="navbar-brand" href="#">D&D encounters</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Parties</a>
+            <div class="dropdown-menu" aria-labelledby="dropdown01">
+              <a class="dropdown-item" href="#">Party</a>
+              <a class="dropdown-item" href="#">
+                <form class="form-inline my-2 my-lg-0">
+                  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Add a party</button>
+                </form>
+              </a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Opponents</a>
+            <div class="dropdown-menu" aria-labelledby="dropdown01">
+              <a class="dropdown-item" href="#">Opponents</a>
+              <a class="dropdown-item" href="#">
+                <form class="form-inline my-2 my-lg-0">
+                  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Add an opposing group</button>
+                </form>
+              </a>
+            </div>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="text" placeholder="E-mail" aria-label="E-mail">
+          <input class="form-control mr-sm-2" type="text" placeholder="Password" aria-label="Password">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Log in</button>
+        </form>
+        <form class="form-inline mx-2 my-lg-1">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Register</button>
+        </form>
+      </div>
+    </nav>
+
+    <main role="main">
+      <!-- Main jumbotron for a primary marketing message or call to action -->
+      <div class="jumbotron">
+        <div class="container">
+          <h1 class="display-3">Hey</h1>
+
+          <script>
+
+            $.ajax({
+                url: "http://127.0.0.1:3000/parties",
+                type: "GET",
+                contentType: "application/json",
+                dataType: 'json',
+                headers: {'Authorization': "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE1OTA0OTQzMTB9.YL8Vt6e8g1xzHh49NKOkhkogJ_lhi4c7D-44ZTCvAhA"}
+            })
+            .done(function( data ) {
+                console.log("Pobrano tekst: " + data);
+            })
+            .fail(function( xhr, status, errorThrown ) {
+                alert("Nie udalo sie pobrac danych.");
+            });
+
+          </script>
+          
+        </div>
+      </div>
+    </main>
+
+    <footer class="container">
+      <p>WWWiJS project by Arkadiusz Chudy</p>
+    </footer>
+
+  </body>
+</html>
