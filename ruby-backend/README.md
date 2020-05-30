@@ -16,6 +16,11 @@ sudo apt-get install -y libxslt-dev libxml2-dev zlib1g-dev
 sudo apt-get install -y sqlite3 libsqlite3-dev
 bundle install
 ```
+if ```nokogiri``` still fails to install, run:
+```
+sudo apt-get install build-essential
+bundle install
+```
 
 ## What does it do?
 Here is a table of endpoints it serves. All requests apart from signup and login have to be authenticated with a JWT given with aforementioned.
