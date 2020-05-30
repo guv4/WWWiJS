@@ -1,0 +1,11 @@
+.my-picker {
+    padding: 2%;
+    width: 50%;
+    left: 25%;
+    position: relative;
+}
+
+h5 {
+    text-align: center;
+    color: #fff;
+}

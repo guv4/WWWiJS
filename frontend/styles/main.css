@@ -1,0 +1,75 @@
+.banner {
+  margin-top: 2.5%;
+  margin-bottom: 2.5%;
+  padding: 2.5%;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+  background: #cc0000;
+  color: #fff;
+  text-align: center;
+  width: 100%;
+}
+
+.container {
+  margin-top: 2.5%;
+  margin-bottom: 2.5%;
+}
+
+.container form {
+  padding: 10%;
+}
+
+.party-container {
+  padding: 2.5%;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+}
+
+.party-container h3 {
+  text-align: center;
+  color: #333;
+}
+
+.party-container .btnSubmit {
+  font-weight: 600;
+  color: #fff;
+  background-color: #cc0000;
+}
+
+.opponent-container {
+  padding: 2.5%;
+  background: #cc0000;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+}
+
+.opponent-container h3 {
+  text-align: center;
+  color: #fff;
+}
+
+.opponent-container .btnSubmit {
+  font-weight: 600;
+  color: #cc0000;
+  background-color: #fff;
+}
+
+.dropdown-picker {
+  padding: 2%;
+  width: 50%;
+  left: 25%;
+  position: relative;
+}
+
+.pc-container {
+  padding: 2.5%;
+  margin-bottom: 2.5%;
+  text-align: center;
+  background: #cc0000;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+}
+
+.npc-container {
+  padding: 2.5%;
+  margin-bottom: 2.5%;
+  text-align: center;
+  background: #ffffff;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+}

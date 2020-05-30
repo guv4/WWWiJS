@@ -1,0 +1,58 @@
+.banner {
+  padding: 2.5%;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+  background: #cc0000;
+  color: #fff;
+  text-align: center;
+  width: 100%;
+}
+
+.btnSubmit {
+  width: 50%;
+  border-radius: 1rem;
+  padding: 1.5%;
+  border: none;
+  cursor: pointer;
+}
+
+.container {
+  margin-top: 2.5%;
+  margin-bottom: 2.5%;
+}
+
+.container form {
+  padding: 10%;
+}
+
+.form-login {
+  padding: 2.5%;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+}
+
+.form-login h3 {
+  text-align: center;
+  color: #333;
+}
+
+.form-login .btnSubmit {
+  font-weight: 600;
+  color: #fff;
+  background-color: #cc0000;
+}
+
+.form-register {
+  padding: 2.5%;
+  background: #cc0000;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+}
+
+.form-register h3 {
+  text-align: center;
+  color: #fff;
+}
+
+.form-register .btnSubmit {
+  font-weight: 600;
+  color: #cc0000;
+  background-color: #fff;
+}
