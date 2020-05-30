@@ -128,7 +128,7 @@
     });
 
     const baseUrl = "http://34.107.6.19:3000/";
-    const mainUrl = "http://34.107.6.19/main.html"
+    const mainUrl = "http://34.107.6.19/main.html";
     //const mainUrl = "file:///home/achudy/studia/WWWiJS/frontend/main.html";
 
     $("#registerform").submit(function (event) {
@@ -147,9 +147,7 @@
         success: function (result) {
           //alert(result.message);
           localStorage.setItem("token", result.auth_token);
-          window.location.replace(
-            "file:///home/achudy/studia/WWWiJS/frontend/main.html"
-          );
+          window.location.replace(mainUrl);
         },
         error: function (error) {
           if (error.status === 422) {
@@ -170,9 +168,7 @@
         success: function (result) {
           //alert(result.message);
           localStorage.setItem("token", result.auth_token);
-          window.location.replace(
-            "file:///home/achudy/studia/WWWiJS/frontend/main.html"
-          );
+          window.location.replace(mainUrl);
         },
         error: function (error) {
           if (error.status === 422) {
