@@ -3,8 +3,8 @@ $(document).ready(function () {
 });
 
 const apiUrl = "http://34.107.6.19:3000/";
-//   const mainUrl = "http://34.107.6.19/main.html";
-const mainUrl = "file:///home/achudy/studia/WWWiJS/frontend/main.html";
+  const mainUrl = "http://34.107.6.19/main.html";
+// const mainUrl = "file:///home/achudy/studia/WWWiJS/frontend/main.html";
 
 $("#registerform").submit(function (event) {
   event.preventDefault();

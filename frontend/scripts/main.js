@@ -3,9 +3,9 @@ const apiUrl = "http://34.107.6.19:3000/";
 //Auth token got and saved in the login/signin part.
 const token = localStorage.getItem("token");
 //The url to the login/signin page.
-const loginUrl = "file:///home/achudy/studia/WWWiJS/frontend/hello.html";
+// const loginUrl = "file:///home/achudy/studia/WWWiJS/frontend/hello.html";
 
-// const loginUrl = "http://34.107.6.19/hello.html";
+const loginUrl = "http://34.107.6.19/hello.html";
 
 //List declarations just so they are more accessible.
 var partyList = [];
