@@ -9,6 +9,18 @@
   width: 100%;
 }
 
+.banner h2 {
+  text-align: left;
+}
+
+.banner .btn {
+  font-weight: 600;
+  color: #fff;
+  background-color: #cc0000;
+  float: right;
+  border: #000000;
+}
+
 .container {
   margin-top: 2.5%;
   margin-bottom: 2.5%;
@@ -16,6 +28,10 @@
 
 .container form {
   padding: 10%;
+}
+
+.form-logout {
+  padding: 0%;
 }
 
 .party-container {
@@ -28,12 +44,14 @@
   color: #333;
 }
 
-.party-container .btnSubmit {
+#btn-party-create {
   font-weight: 600;
   color: #fff;
+  border: 0;
   background-color: #cc0000;
+  position: absolute;
+  right: 2.5%;
 }
-
 .opponent-container {
   padding: 2.5%;
   background: #cc0000;
@@ -45,31 +63,57 @@
   color: #fff;
 }
 
-.opponent-container .btnSubmit {
+#btn-opponents-create {
   font-weight: 600;
   color: #cc0000;
+  border: 0;
   background-color: #fff;
+  position: absolute;
+  right: 2.5%;
 }
 
 .dropdown-picker {
   padding: 2%;
-  width: 50%;
-  left: 25%;
-  position: relative;
+  max-width: 55%;
+  width: max-content;
 }
 
 .pc-container {
-  padding: 2.5%;
+  padding-top: 5%;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-bottom: 2%;
   margin-bottom: 2.5%;
-  text-align: center;
+  text-align: left;
   background: #cc0000;
   box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
 }
 
 .npc-container {
-  padding: 2.5%;
+  padding-top: 5%;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-bottom: 2%;
   margin-bottom: 2.5%;
-  text-align: center;
+  text-align: left;
   background: #ffffff;
   box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+}
+
+.banner .btn:hover,
+.banner .btn:active,
+.party-container .btn:hover,
+.party-container .btn:active,
+.opponent-container .btn:hover,
+.opponent-container .btn:active {
+  background-color: #000000;
+  color: white;
+  border: #000000;
+}
+
+.form-group input {
+  margin-top: 2%;
+  background-color: #000000;
+  color: white;
+  border: #000000;
 }
