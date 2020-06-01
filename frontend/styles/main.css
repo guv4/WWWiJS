@@ -22,6 +22,8 @@
   background-color: #cc0000;
   float: right;
   border: #000000;
+  cursor: pointer;
+
 }
 
 .container {
@@ -53,6 +55,7 @@
 }
 #pc-btn,
 #btn-party-create {
+  cursor: pointer;
   font-weight: 600;
   color: #fff;
   border: 0;
@@ -80,6 +83,8 @@
   color: #cc0000;
   border: 0;
   background-color: #fff;
+  cursor: pointer;
+
 }
 
 .dropdown-picker {
