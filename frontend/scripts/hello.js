@@ -4,17 +4,15 @@ const apiUrl = "http://34.107.6.19:3000/";
 const mainUrl = "http://34.107.6.19/main.html";
 // const mainUrl = "file:///home/achudy/studia/WWWiJS/frontend/main.html";
 
-//Every time the hello screen is prompted - remove a token from localStorage
-//Just a precaution.
-// $(document).ready(function () {
-//   if (!localStorage.getItem("token")){
-//     window.location.replace(mainUrl);
-//   };
-// });
+//Check immidiately if there is a token. If so, go to the main page.
 if (localStorage.getItem("token")) {
   window.location.replace(mainUrl);
 }
 
+//Define how a POST request should be handled when registering.
+//The data sent to the API is gathered from the form,
+//When the register submit is successful, write down the token
+//And go to the main page. If not, display an alert with a message.
 $("#registerform").submit(function (event) {
   event.preventDefault();
   $.ajax({
@@ -27,7 +25,6 @@ $("#registerform").submit(function (event) {
       password_confirmation: $("#registerform #password_confirmation").val(),
     },
     success: function (result) {
-      //alert(result.message);
       localStorage.setItem("token", result.auth_token);
       window.location.replace(mainUrl);
     },
@@ -38,6 +35,11 @@ $("#registerform").submit(function (event) {
     },
   });
 });
+
+//Define how a POST request should be handled when logging in.
+//The data sent to the API is gathered from the form,
+//When the login submit is successful, write down the token
+//And go to the main page. If not, display an alert with a message.
 $("#loginform").submit(function (event) {
   event.preventDefault();
   $.ajax({

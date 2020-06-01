@@ -1,3 +1,21 @@
+/* UI elements */
+.container {
+  margin-top: 2.5%;
+  margin-bottom: 2.5%;
+}
+.container form {
+  padding: 10%;
+}
+.btnSubmit {
+  width: 50%;
+  padding: 1.5%;
+  border: none;
+  cursor: pointer;
+}
+
+/* Body layout */
+
+/* Header banner */
 .banner {
   padding: 2.5%;
   box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
@@ -7,23 +25,7 @@
   width: 100%;
 }
 
-.btnSubmit {
-  width: 50%;
-  border-radius: 1rem;
-  padding: 1.5%;
-  border: none;
-  cursor: pointer;
-}
-
-.container {
-  margin-top: 2.5%;
-  margin-bottom: 2.5%;
-}
-
-.container form {
-  padding: 10%;
-}
-
+/* Form login */
 .form-login {
   padding: 2.5%;
   box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
@@ -40,6 +42,7 @@
   background-color: #cc0000;
 }
 
+/* Form register */
 .form-register {
   padding: 2.5%;
   background: #cc0000;
