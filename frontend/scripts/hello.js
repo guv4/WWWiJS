@@ -2,7 +2,6 @@
 const apiUrl = "http://34.107.6.19:3000/";
 //The url to the login/signin page.
 const mainUrl = "http://34.107.6.19/main.html";
-// const mainUrl = "file:///home/achudy/studia/WWWiJS/frontend/main.html";
 
 //Check immidiately if there is a token. If so, go to the main page.
 if (localStorage.getItem("token")) {
