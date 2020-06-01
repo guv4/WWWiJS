@@ -12,8 +12,8 @@ Jako backend projektu, do utworzenia REST API wykorzystane zostało Ruby on Rail
 * utworzenie działającego REST API (1 pkt) *zrobione*
 * umożliwienie wgrywania miniaturek (obrazków) postaci (1 pkt)
 * umożliwienie szybkiej edycji parametrów jak punkty życia itd. (1 pkt) *zrobione w backendzie*
-* użytkownik ma możliwość tworzenia/usuwania swoich drużyn, dodawania/usuwania bohaterów w drużynie na stronie (1 pkt) *zrobione w backendzie*
-* uwtorzenie przejrzystego i czytelnego layoutu strony (1 pkt)
-* strona musi posiadać layout działający w przeglądarkach Chrome, Firefox i Edge (1 pkt)
-* instrukcja uruchomienia i obsługi (1 pkt)
+* użytkownik ma możliwość tworzenia/usuwania swoich drużyn, dodawania/usuwania bohaterów w drużynie na stronie (1 pkt) *zrobione*
+* uwtorzenie przejrzystego i czytelnego layoutu strony (1 pkt) *zrobione*
+* strona musi posiadać layout działający w przeglądarkach Chrome, Firefox i Edge (1 pkt) *zrobione*
+* instrukcja uruchomienia i obsługi (1 pkt) *~zrobione*
 * dokumentacja kodu źródłowego (komentarze) i jego jakość (1 pkt)
