@@ -11,7 +11,7 @@ const mainUrl = "http://34.107.6.19/main.html";
 //     window.location.replace(mainUrl);
 //   };
 // });
-if (!localStorage.getItem("token")) {
+if (localStorage.getItem("token")) {
   window.location.replace(mainUrl);
 }
 
