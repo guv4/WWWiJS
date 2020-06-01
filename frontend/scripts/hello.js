@@ -6,11 +6,14 @@ const mainUrl = "http://34.107.6.19/main.html";
 
 //Every time the hello screen is prompted - remove a token from localStorage
 //Just a precaution.
-$(document).ready(function () {
-  if (localStorage.getItem("token")!=null){
-    window.location.replace(mainUrl);
-  };
-});
+// $(document).ready(function () {
+//   if (!localStorage.getItem("token")){
+//     window.location.replace(mainUrl);
+//   };
+// });
+if (!localStorage.getItem("token")) {
+  window.location.replace(mainUrl);
+}
 
 $("#registerform").submit(function (event) {
   event.preventDefault();
