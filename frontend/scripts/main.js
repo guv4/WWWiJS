@@ -7,13 +7,15 @@ const token = localStorage.getItem("token");
 
 const loginUrl = "http://34.107.6.19/hello.html";
 
-//List declarations just so they are more accessible.
+//List and vars declarations just so they are more accessible.
 var partyList = [];
 var opponentList = [];
 var pcList = [];
 var npcList = [];
 var currentPartyId = 0;
 var currentOpponentsId = 0;
+var currentPcId = 0;
+var currentNpcId = 0;
 
 //Checking if there is a token - a user was recently signed in.
 $(document).ready(function () {
@@ -68,10 +70,34 @@ function makeModalCharacter(entity, title) {
     '<input id="name" type="text" class="form-control"' +
     'placeholder="Name"' +
     'value=""/>' +
-    '<input id="ac" type="text" class="form-control"' +
+    '<input id="ac" type="number" min="-7" class="form-control"' +
     'placeholder="Armor Class"' +
     'value=""/>' +
-    '<input id="hp" type="text" class="form-control"' +
+    '<input id="hp" type="number" class="form-control"' +
+    'placeholder="Hit Points"' +
+    'value=""/>' +
+    '<input id="description" type="text" class="form-control"' +
+    'placeholder="Description"' +
+    'value=""/>' +
+    '</div><div class="form-group">' +
+    '<input type="submit" class="btn btn-info" value="Add" />' +
+    "</div></form></div></div></div></div>";
+}
+function makeModalEdit() {
+  document.getElementById("modals").innerHTML +=
+    '<div class="modal fade" id="edit-modal" role="dialog">' +
+    '<div class="modal-dialog"><div class="modal-content"><div class="modal-header">' +
+    '<h4 class="modal-title">Edit:</h4>' +
+    '<button type="button" class="close" data-dismiss="modal">&times;</button></div>' +
+    '<div class="modal-body"><form id="add-edit-form">' +
+    '<div class="form-edit">' +
+    '<input id="name" type="text" class="form-control"' +
+    'placeholder="Name"' +
+    'value=""/>' +
+    '<input id="ac" type="number" min="-7" class="form-control"' +
+    'placeholder="Armor Class"' +
+    'value=""/>' +
+    '<input id="hp" type="number" class="form-control"' +
     'placeholder="Hit Points"' +
     'value=""/>' +
     '<input id="description" type="text" class="form-control"' +
@@ -90,6 +116,7 @@ makeModalGroup(
 );
 makeModalCharacter("pc", "Add a player character:");
 makeModalCharacter("npc", "Add an NPC:");
+makeModalEdit();
 
 //Defining how to get and what to do with got arrays from the API
 function ajaxGetGroup(isParties) {
@@ -199,6 +226,11 @@ function displayBasedOnPicker(isParties) {
                   "$containerClass",
                   containerClass
                 ) +
+                '<button id="$id" type="button" class="close" data-toggle="modal" '.replace(
+                  "$id",
+                  obj.id
+                ) +
+                'data-target="#edit-modal">&hellip;</button>' +
                 "<h4><strong>$name</strong></h4>".replace("$name", obj.name) +
                 "<p>AC: <strong>$ac</strong></p>".replace("$ac", obj.ac) +
                 "<p>HP: <strong>$hp</strong></p>".replace("$hp", obj.hp) +
@@ -207,10 +239,17 @@ function displayBasedOnPicker(isParties) {
                   obj.description
                 ) +
                 "</div>";
+                $(document).on("click", "#$id".replace("$id", obj.id), function () {
+                  $(".form-edit #name").val( obj.name );
+                  $(".form-edit #ac").val( obj.ac );
+                  $(".form-edit #hp").val( obj.hp );
+                  $(".form-edit #description").val( obj.description );
+                });
             });
             document.getElementById(innerId).innerHTML +=
               "<div>" +
-              '<button type="button" class="btn btn-info" data-toggle="modal"' +
+              '<button id="$id-btn"'.replace("$id",modalId)+
+              'type="button" class="btn btn-info" data-toggle="modal"' +
               'data-target="#$id-modal">'.replace("$id", modalId) +
               "Create new" +
               "</button>" +
@@ -301,6 +340,7 @@ $("#add-pc-form").submit(function () {
     },
   });
 });
+
 //Logic for adding npc-s
 $("#add-npc-form").submit(function () {
   event.preventDefault();

@@ -1,3 +1,4 @@
+/* Header banner */
 .banner {
   margin-top: 2.5%;
   margin-bottom: 2.5%;
@@ -11,6 +12,8 @@
 
 .banner h2 {
   text-align: left;
+  display: flex;
+  align-items: center;
 }
 
 .banner .btn {
@@ -45,13 +48,17 @@
 }
 
 #btn-party-create {
+  position: absolute;
+  right: 2.5%;
+}
+#pc-btn,
+#btn-party-create {
   font-weight: 600;
   color: #fff;
   border: 0;
   background-color: #cc0000;
-  position: absolute;
-  right: 2.5%;
 }
+
 .opponent-container {
   padding: 2.5%;
   background: #cc0000;
@@ -64,12 +71,15 @@
 }
 
 #btn-opponents-create {
+  position: absolute;
+  right: 2.5%;
+}
+#npc-btn,
+#btn-opponents-create {
   font-weight: 600;
   color: #cc0000;
   border: 0;
   background-color: #fff;
-  position: absolute;
-  right: 2.5%;
 }
 
 .dropdown-picker {

@@ -1,10 +1,16 @@
-$(document).ready(function () {
-  localStorage.removeItem("token");
-});
-
+//The address of the API, there is a http so that CORS doesn't block it.
 const apiUrl = "http://34.107.6.19:3000/";
-  const mainUrl = "http://34.107.6.19/main.html";
+//The url to the login/signin page.
+const mainUrl = "http://34.107.6.19/main.html";
 // const mainUrl = "file:///home/achudy/studia/WWWiJS/frontend/main.html";
+
+//Every time the hello screen is prompted - remove a token from localStorage
+//Just a precaution.
+$(document).ready(function () {
+  if (localStorage.removeItem("token")!=null){
+    window.location.replace(mainUrl);
+  };
+});
 
 $("#registerform").submit(function (event) {
   event.preventDefault();
