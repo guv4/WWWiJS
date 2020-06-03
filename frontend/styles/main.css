@@ -1,3 +1,47 @@
+/* UI elements */
+.container {
+  margin-top: 2.5%;
+  margin-bottom: 2.5%;
+}
+
+.container form {
+  padding: 5%;
+}
+
+.dropdown-picker {
+  padding: 2%;
+  max-width: 55%;
+  width: max-content;
+}
+
+.buttons {
+  margin-top: 3%;
+  cursor: pointer;
+  font-weight: 600;
+  color: #fff;
+  border: 0;
+  background-color: #cc0000;
+}
+
+.buttons:hover {
+  margin-top: 3%;
+  cursor: pointer;
+  font-weight: 600;
+  color: #fff;
+  border: 0;
+  background-color: #000000;
+}
+
+
+/* .form-group input {
+  margin-top: 2%;
+  background-color: #000000;
+  color: white;
+  border: #000000;
+} */
+
+/* Body layout */
+
 /* Header banner */
 .banner {
   margin-top: 2.5%;
@@ -23,21 +67,20 @@
   float: right;
   border: #000000;
   cursor: pointer;
-
 }
 
-.container {
-  margin-top: 2.5%;
-  margin-bottom: 2.5%;
-}
-
-.container form {
-  padding: 10%;
+.banner .btn:hover,
+.banner .btn:active {
+  background-color: #000000;
+  color: white;
+  border: #000000;
 }
 
 .form-logout {
   padding: 0%;
 }
+
+/* Left container */
 
 .party-container {
   padding: 2.5%;
@@ -62,6 +105,48 @@
   background-color: #cc0000;
 }
 
+.pc-container {
+  padding-top: 5%;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-bottom: 2%;
+  margin-bottom: 2.5%;
+  text-align: left;
+  background: #cc0000;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+}
+
+.experiment {
+  /* float: right; */
+  font-size: 1.5rem;
+  font-weight: 700;
+  /* line-height: 1; */
+  color: #000;
+  text-shadow: 0 1px 0 #fff;
+  opacity: 0.5;
+}
+.experiment:hover {
+  color: #000;
+  text-decoration: none;
+}
+.experiment:not(:disabled):not(.disabled):focus,
+.experiment:not(:disabled):not(.disabled):hover {
+  opacity: 0.75;
+}
+.experiment {
+  padding: 0;
+  background-color: transparent;
+  border: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+.div-inline {
+  display:inline-block;
+}
+
+/* Right container */
+
 .opponent-container {
   padding: 2.5%;
   background: #cc0000;
@@ -84,24 +169,6 @@
   border: 0;
   background-color: #fff;
   cursor: pointer;
-
-}
-
-.dropdown-picker {
-  padding: 2%;
-  max-width: 55%;
-  width: max-content;
-}
-
-.pc-container {
-  padding-top: 5%;
-  padding-left: 5%;
-  padding-right: 5%;
-  padding-bottom: 2%;
-  margin-bottom: 2.5%;
-  text-align: left;
-  background: #cc0000;
-  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
 }
 
 .npc-container {
@@ -113,22 +180,4 @@
   text-align: left;
   background: #ffffff;
   box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
-}
-
-.banner .btn:hover,
-.banner .btn:active,
-.party-container .btn:hover,
-.party-container .btn:active,
-.opponent-container .btn:hover,
-.opponent-container .btn:active {
-  background-color: #000000;
-  color: white;
-  border: #000000;
-}
-
-.form-group input {
-  margin-top: 2%;
-  background-color: #000000;
-  color: white;
-  border: #000000;
 }
