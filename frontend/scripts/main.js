@@ -134,7 +134,7 @@ makeModalDelete();
 makeModalEdit();
 
 //Defining how to get and what to do with got arrays from the API
-function ajaxGetGroup(isParties) {
+function ajaxGetGroup(isParties, isInitial) {
   var endpoint = "";
   var destinationId = "";
 
@@ -158,16 +158,20 @@ function ajaxGetGroup(isParties) {
     .done(function (data) {
       if (isParties) {
         partyList = data;
-        data.forEach(function (obj) {
-          document.getElementById(destinationId).innerHTML +=
-            "<option>" + obj.title + "</option>";
-        });
+        if (isInitial) {
+          data.forEach(function (obj) {
+            document.getElementById(destinationId).innerHTML +=
+              "<option>" + obj.title + "</option>";
+          });
+        }
       } else {
         opponentList = data;
-        data.forEach(function (obj) {
-          document.getElementById(destinationId).innerHTML +=
-            "<option>" + obj.faction + "</option>";
-        });
+        if (isInitial) {
+          data.forEach(function (obj) {
+            document.getElementById(destinationId).innerHTML +=
+              "<option>" + obj.faction + "</option>";
+          });
+        }
       }
     })
     .fail(function (xhr, status, errorThrown) {
@@ -177,8 +181,8 @@ function ajaxGetGroup(isParties) {
     });
 }
 //Calling the function for both the parties and opponents parts
-ajaxGetGroup(true);
-ajaxGetGroup(false);
+ajaxGetGroup(true, true);
+ajaxGetGroup(false, true);
 
 //Defining how to get and what to do with got arrays of character items from the API
 function displayBasedOnPicker(isParties) {
@@ -259,7 +263,7 @@ $("#add-pc-form").submit(function () {
       Authorization: token,
     },
     success: function (result) {
-      ajaxGetGroup(true);
+      ajaxGetGroup(true, false);
       getAndDisplayCards(true);
     },
     error: function (error) {
@@ -286,7 +290,7 @@ $("#add-npc-form").submit(function () {
       Authorization: token,
     },
     success: function (result) {
-      ajaxGetGroup(false);
+      ajaxGetGroup(false, false);
       getAndDisplayCards(false);
     },
     error: function (error) {
@@ -364,7 +368,7 @@ $("#delete-form").submit(function () {
     },
     success: function (result) {
       getAndDisplayCards(partyIsCurrentlyEdited);
-      $('#delete-modal').modal('toggle');
+      $("#delete-modal").modal("toggle");
     },
     error: function (error) {
       if (error.status === 422) {
@@ -380,7 +384,7 @@ function hpChange(whichWay, partyIsEdited, currentGroupId, objectId, hp) {
   var editedId = objectId;
   var group = currentGroupId;
   var newHp = 0;
-  var hpChangeAmount=0;
+  var hpChangeAmount = 0;
   if (partyIsEdited) {
     endpointOne = "parties/";
     endpointTwo = "/player_characters/";
@@ -388,8 +392,10 @@ function hpChange(whichWay, partyIsEdited, currentGroupId, objectId, hp) {
     endpointOne = "opponents/";
     endpointTwo = "/non_player_characters/";
   }
-  if($("#$id-hp-changed".replace("$id", objectId)).val()!=null){
-    hpChangeAmount = parseInt($("#$id-hp-changed".replace("$id", objectId)).val());
+  if ($("#$id-hp-changed".replace("$id", objectId)).val() != null) {
+    hpChangeAmount = parseInt(
+      $("#$id-hp-changed".replace("$id", objectId)).val()
+    );
   }
   if (whichWay == "up") {
     newHp = hp + hpChangeAmount;
@@ -418,7 +424,7 @@ function hpChange(whichWay, partyIsEdited, currentGroupId, objectId, hp) {
   });
 }
 
-function getAndDisplayCards(isParties){
+function getAndDisplayCards(isParties) {
   console.log("ay");
   var pickerId = "";
   var groupList = null;
@@ -453,10 +459,10 @@ function getAndDisplayCards(isParties){
     var objectToCompare = null;
     if (isParties) {
       objectToCompare = obj.title;
-      console.log(obj.title+"gggg");
+      console.log(obj.title + "gggg");
     } else {
       objectToCompare = obj.faction;
-      console.log(obj.faction+"gg");
+      console.log(obj.faction + "gg");
     }
     if (objectToCompare == selectedFromPicker) {
       if (isParties) {
@@ -498,10 +504,10 @@ function getAndDisplayCards(isParties){
               ) +
               "<p>AC: <strong>$ac</strong></p>".replace("$ac", obj.ac) +
               "<p>" +
-              "HP: <strong id='$id-hp'>".replace("$id", obj.id)+
-              '$hp</strong></p>'.replace("$hp", obj.hp) +
-              '<input id="$id-hp-changed"'.replace("$id",obj.id) +
-              'type="number" placeholder="HP change" style="margin-right:3%;border-radius:.25rem;width:30%;"></input>'+
+              "HP: <strong id='$id-hp'>".replace("$id", obj.id) +
+              "$hp</strong></p>".replace("$hp", obj.hp) +
+              '<input id="$id-hp-changed"'.replace("$id", obj.id) +
+              'type="number" placeholder="HP change" style="margin-right:3%;border-radius:.25rem;width:30%;"></input>' +
               '<button id="$id-up" type="button" class="btn experiment" style="padding:1%;"'.replace(
                 "$id",
                 obj.id
@@ -512,9 +518,7 @@ function getAndDisplayCards(isParties){
                 obj.id
               ) +
               ">&dArr;</button></div>" +
-              '</div>'+
-
-              
+              "</div>" +
               // '<form class="form-inline">'+
               // '<div class="form-group mx-sm-3 mb-2">'
               // '<input id="$id-plus-hp" type="number" class="form-control"'.replace("$id", obj.id) +
@@ -536,16 +540,12 @@ function getAndDisplayCards(isParties){
               // // 'style="width: 50%;" value=""/>'+
               // "</form>"+
               "</div>";
-            $(document).on(
-              "click",
-              "#$id".replace("$id", obj.id),
-              function () {
-                $(".form-edit #name").val(obj.name);
-                $(".form-edit #ac").val(obj.ac);
-                $(".form-edit #hp").val(obj.hp);
-                $(".form-edit #description").val(obj.description);
-              }
-            );
+            $(document).on("click", "#$id".replace("$id", obj.id), function () {
+              $(".form-edit #name").val(obj.name);
+              $(".form-edit #ac").val(obj.ac);
+              $(".form-edit #hp").val(obj.hp);
+              $(".form-edit #description").val(obj.description);
+            });
             $(document).on(
               "click",
               "#$id-up".replace("$id", obj.id),
@@ -569,7 +569,6 @@ function getAndDisplayCards(isParties){
                     obj.hp
                   );
                 }
-                
               }
             );
             $(document).on(
@@ -597,19 +596,15 @@ function getAndDisplayCards(isParties){
                 }
               }
             );
-            $(document).on(
-              "click",
-              "#$id".replace("$id", obj.id),
-              function () {
-                if (isParties) {
-                  currentPcId = obj.id;
-                  partyIsCurrentlyEdited = true;
-                } else {
-                  currentNpcId = obj.id;
-                  partyIsCurrentlyEdited = false;
-                }
+            $(document).on("click", "#$id".replace("$id", obj.id), function () {
+              if (isParties) {
+                currentPcId = obj.id;
+                partyIsCurrentlyEdited = true;
+              } else {
+                currentNpcId = obj.id;
+                partyIsCurrentlyEdited = false;
               }
-            );
+            });
             $(document).on(
               "click",
               "#$id-delete".replace("$id", obj.id),
