@@ -6,14 +6,17 @@ Projekt składa się ze strony internetowej, gdzie użytkownik może zalogować 
 
 Jako backend projektu, do utworzenia REST API wykorzystane zostało Ruby on Rails, strona internetowa napisana jest przy użyciu HTML i JavaScript.
 
+### Adres projektu
+Projekt wystawiony jest pod adresem <http://xx.xx.xx.xx>.
+
 ### Zadania projektowe
 * zamodelowanie użytkownika i wprowadzenie uwierzytelniania (JWT) (1 pkt) *zrobione*
 * zamodelowanie drużyny, bohaterów, przeciwników i utworzenie relacji drużyna-bohaterowie oraz grupy_przeciwników-przeciwnicy (1 pkt) *zrobione*
-* utworzenie działającego REST API (1 pkt) *zrobione*
-* umożliwienie wgrywania miniaturek (obrazków) postaci (1 pkt)
-* umożliwienie szybkiej edycji parametrów jak punkty życia itd. (1 pkt) *zrobione w backendzie*
+* utworzenie działającego REST API (1 pkt) *zrobione, wystawione na maszynie w GC: xx.xx.xx.xx3000*
+* umożliwienie wgrywania miniaturek (obrazków) postaci (1 pkt) *skip*
+* umożliwienie szybkiej edycji parametrów - punkty życia (1 pkt) *zrobione*
 * użytkownik ma możliwość tworzenia/usuwania swoich drużyn, dodawania/usuwania bohaterów w drużynie na stronie (1 pkt) *zrobione*
-* uwtorzenie przejrzystego i czytelnego layoutu strony (1 pkt) *zrobione*
+* utworzenie przejrzystego i czytelnego layoutu strony (1 pkt) *zrobione*
 * strona musi posiadać layout działający w przeglądarkach Chrome, Firefox i Edge (1 pkt) *zrobione*
-* instrukcja uruchomienia i obsługi (1 pkt) *~zrobione*
-* dokumentacja kodu źródłowego (komentarze) i jego jakość (1 pkt)
+* instrukcja uruchomienia i obsługi (1 pkt) *zrobione*
+* dokumentacja kodu źródłowego (komentarze) i jego jakość (1 pkt) *zrobione*
