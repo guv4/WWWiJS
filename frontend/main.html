@@ -39,10 +39,9 @@
 
     <div class="container">
       <div class="row">
-        <div class="col-md-6 party-container">
+        <div id="main-party-div" class="col-md-6 party-container">
           <h3>Party</h3>
           <select id="partypicker" class="selectpicker dropdown-picker">
-            <option>Choose one:</option>
           </select>
           <button
             id="btn-party-create"
@@ -54,10 +53,9 @@
             Create new
           </button>
         </div>
-        <div class="col-md-6 opponent-container">
-          <h3>Opponents</h3>
+        <div id="main-opponent-div" class="col-md-6 opponent-container">
+          <h3>Opponent groups</h3>
           <select id="opponentpicker" class="selectpicker dropdown-picker">
-            <option>Choose one:</option>
           </select>
           <button
             id="btn-opponents-create"
@@ -87,5 +85,8 @@
       <h5>WWWiJS project by Arkadiusz Chudy</h5>
     </div>
   </body>
-  <script src="scripts/main.js"></script>
+  <script src="scripts/main_init.js"></script>
+  <script src="scripts/main_base.js"></script>
+  <script src="scripts/main_util.js"></script>
+  <script src="scripts/main_form_behavior.js"></script>
 </html>
