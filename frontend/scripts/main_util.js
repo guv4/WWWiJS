@@ -50,7 +50,13 @@ function hpChange(whichWay, partyIsEdited, currentGroupId, objectId, hp) {
         getAndDisplayCards(partyIsEdited);
       })
       .fail(function (error) {
-        alert(error.responseJSON.message);
+        if (error.status == 422) {
+          alert(error.responseJSON.message);
+        } else {
+          alert(
+            "There was an unfortunate error. Please wait a while and reload."
+          );
+        }
       });
   }
 }

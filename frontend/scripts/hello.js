@@ -1,12 +1,12 @@
-//This script defines the essential consts and provides the 
+//This script defines the essential consts and provides the
 
 //The address of the API, there is a http so that CORS doesn't block it.
 const apiUrl = "http://34.107.6.19:3000/";
 // const apiUrl = "http://localhost:3000/";
 
 //The url to the login/signin page.
-// const mainUrl = "http://34.107.6.19/main.html";
-const mainUrl = "file:///home/achudy/studia/WWWiJS/frontend/main.html";
+const mainUrl = "http://34.107.6.19/main.html";
+// const mainUrl = "file:///home/achudy/studia/WWWiJS/frontend/main.html";
 
 //Check immidiately if there is a token. If so, go to the main page.
 if (localStorage.getItem("token")) {
@@ -39,7 +39,15 @@ function listenerToSubmitRegister() {
         window.location.replace(mainUrl);
       })
       .fail(function (error) {
-        alert(error.responseJSON.message);
+        if (error.status == 422) {
+          alert(error.responseJSON.message);
+        } else if (error.status == 401) {
+          alert(error.responseJSON.message);
+        } else {
+          alert(
+            "There was an unfortunate error. Please wait a while and reload."
+          );
+        }
       });
   });
 }
@@ -64,7 +72,15 @@ function listenerToLoginForm() {
         window.location.replace(mainUrl);
       })
       .fail(function (error) {
-        alert(error.responseJSON.message);
+        if (error.status == 422) {
+          alert(error.responseJSON.message);
+        } else if (error.status == 401) {
+          alert(error.responseJSON.message);
+        } else {
+          alert(
+            "There was an unfortunate error. Please wait a while and reload."
+          );
+        }
       });
   });
 }

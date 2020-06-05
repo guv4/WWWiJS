@@ -11,6 +11,8 @@ let partyList = [];
 let opponentList = [];
 let currentPartyId = 0;
 let currentOpponentsId = 0;
+let currentPcId = 0;
+let currentNpcId = 0;
 
 //Calling the function for the initial array of both groups
 //and setting them in the html selectpicker.
@@ -96,8 +98,6 @@ function getAndDisplayCards(isParties) {
           data.forEach(function (obj) {
             createSingularPlayerCard(innerId, containerClass, obj);
             fillEditModalWithValuesOnClick(obj);
-            placeListenerOnEditDeleteButton(obj, "edit");
-            placeListenerOnEditDeleteButton(obj, "delete");
             placeListenerOnHpClick(obj, "up");
             placeListenerOnHpClick(obj, "down");
           });
@@ -137,6 +137,12 @@ function createSingularPlayerCard(innerId, containerClass, obj) {
     '<button id="$id-down" '.replace("$id", obj.id) +
     'type="button" class="btn experiment" style="padding:1%;">&dArr;</button>' +
     "</div></div></div>";
+    $(document).on("click", "#$id-delete".replace("$id", obj.id), function () {
+      isParties ? currentPcId = obj.id : currentNpcId = obj.id;
+    });
+    $(document).on("click", "#$id-edit".replace("$id", obj.id), function () {
+      isParties ? currentPcId = obj.id : currentNpcId = obj.id;
+    });
 }
 
 //Fills up the edit modal with existing values of a particular object.
@@ -154,7 +160,8 @@ function placeListenerOnHpClick(obj, direction) {
   let buttonId = direction == "up" ? "#$id-up" : "#$id-down";
   $(document).on("click", buttonId.replace("$id", obj.id), function () {
     let currentId = isParties ? currentPartyId : currentOpponentsId;
-    hpChange(direction, isParties, currentId, obj.id, obj.hp);
+    let hp = parseInt($("#$id-hp".replace("$id", obj.id)).html());
+    hpChange(direction, isParties, currentId, obj.id, hp);
   });
 }
 

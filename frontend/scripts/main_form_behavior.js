@@ -29,7 +29,13 @@ $("#add-party-form").submit(function () {
       getGroup(true, true);
     })
     .fail(function (error) {
-      alert(error.responseJSON.message);
+      if (error.status == 422) {
+        alert(error.responseJSON.message);
+      } else {
+        alert(
+          "There was an unfortunate error. Please wait a while and reload."
+        );
+      }
     });
 });
 
@@ -54,7 +60,13 @@ $("#add-opponent-form").submit(function () {
       getGroup(false, true);
     })
     .fail(function (error) {
-      alert(error.responseJSON.message);
+      if (error.status == 422) {
+        alert(error.responseJSON.message);
+      } else {
+        alert(
+          "There was an unfortunate error. Please wait a while and reload."
+        );
+      }
     });
 });
 
@@ -83,7 +95,13 @@ $("#add-pc-form").submit(function () {
       getAndDisplayCards(true);
     })
     .fail(function (error) {
-      alert(error.responseJSON.message);
+      if (error.status == 422) {
+        alert(error.responseJSON.message);
+      } else {
+        alert(
+          "There was an unfortunate error. Please wait a while and reload."
+        );
+      }
     });
 });
 
@@ -112,7 +130,13 @@ $("#add-npc-form").submit(function () {
       getAndDisplayCards(false);
     })
     .fail(function (error) {
-      alert(error.responseJSON.message);
+      if (error.status == 422) {
+        alert(error.responseJSON.message);
+      } else {
+        alert(
+          "There was an unfortunate error. Please wait a while and reload."
+        );
+      }
     });
 });
 
@@ -149,7 +173,13 @@ $("#edit-form").submit(function () {
       getAndDisplayCards(isParties);
     })
     .fail(function (error) {
-      alert(error.responseJSON.message);
+      if (error.status == 422) {
+        alert(error.responseJSON.message);
+      } else {
+        alert(
+          "There was an unfortunate error. Please wait a while and reload."
+        );
+      }
     });
 });
 
@@ -179,6 +209,12 @@ $("#delete-form").submit(function () {
       $("#delete-modal").modal("toggle");
     })
     .fail(function (error) {
-      alert(error.responseJSON.message);
+      if (error.status == 422) {
+        alert(error.responseJSON.message);
+      } else {
+        alert(
+          "There was an unfortunate error. Please wait a while and reload."
+        );
+      }
     });
 });
