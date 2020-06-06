@@ -21,6 +21,15 @@ if ```nokogiri``` still fails to install, run:
 sudo apt-get install build-essential
 bundle install
 ```
+After the installation, in this folder run:
+```
+rails s -b 0.0.0.0
+```
+To erase existing database and prepare it once more run:
+```
+rails db:drop
+rails db:migrate
+```
 
 ## What does it do?
 Here is a table of endpoints it serves. All requests apart from signup and login have to be authenticated with a JWT given with aforementioned.
