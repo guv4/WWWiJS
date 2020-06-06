@@ -7,7 +7,7 @@ Projekt składa się ze strony internetowej, gdzie użytkownik może zalogować 
 Jako backend projektu, do utworzenia REST API wykorzystane zostało Ruby on Rails, strona internetowa napisana jest przy użyciu HTML i JavaScript.
 
 ### Adres projektu
-Projekt wystawiony jest pod adresem (http://34.107.6.19/)
+Projekt wystawiony jest pod adresem **(http://34.107.6.19/)**
 
 ### Zadania projektowe
 * **zrobione** zamodelowanie użytkownika i wprowadzenie uwierzytelniania (JWT) (1 pkt) 
