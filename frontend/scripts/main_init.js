@@ -7,7 +7,8 @@ const apiUrl = "http://34.107.6.19:3000/";
 // const apiUrl = "http://localhost:3000/";
 
 //The url to the login/signin page.
-// const loginUrl = "file:///home/achudy/studia/WWWiJS/frontend/hello.html";
+//Change the line below if running on localhost.
+// const loginUrl = "file://";
 const loginUrl = "http://34.107.6.19/hello.html";
 
 //Auth token got and saved in the login/signin part.
