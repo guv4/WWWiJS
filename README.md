@@ -20,7 +20,8 @@ Projekt wystawiony jest pod adresem (http://34.107.6.19/)
 * **zrobione** strona musi posiadać layout działający w przeglądarkach Chrome, Firefox i Edge (1 pkt)
 * **zrobione** instrukcja uruchomienia i obsługi (1 pkt)
 * **zrobione** dokumentacja kodu źródłowego (komentarze) i jego jakość (1 pkt)
-Estymacja punktacji na podstawie założonych sobie punktów: 9/10.
+
+##### Estymacja punktacji na podstawie założonych sobie punktów: 9/10.
 
 ### Instrukcja obsługi i uruchomienia 
 Wyżej wspomniana zostało (http://34.107.6.19/), czyli link do strony. Po instrukcje uruchomienia projektu na maszynie lokalnej należy udać się do folderów *ruby-backend* (po instrukcję uruchomienia railsowego API), po instrukcje co do strony internetowej należy udać się do folderu *frontend*.
